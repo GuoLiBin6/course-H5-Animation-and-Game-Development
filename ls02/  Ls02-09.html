@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>绘制椭圆</title>
+		<script>
+			window.onload=function(){
+				var theCanvas = document.getElementById('canvas');
+				var context = theCanvas.getContext('2d');
+				context.lineWidth = 5;
+				context.strokeStyle = 'blue';
+				
+				context.beginPath();
+				var grd = context.createLinearGradient(50,50,100,100);
+				grd.addColorStop(0.5,'red');
+				grd.addColorStop(0.9,'green');
+				context.fillStyle = grd;
+				
+				context.arc(100,100,50,0,Math.PI*1.5,false);
+				context.stroke();
+				context.fillStyle = grd;
+				context.fill();
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<canvas id="canvas" width="500" height="500" style="border:solid #ccc 2px">
+				don't
+			</canvas>
+		</div>
+	</body>
+</html>

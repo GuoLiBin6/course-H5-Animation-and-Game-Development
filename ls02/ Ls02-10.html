@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图案填充</title>
+		<script>
+			window.onload=function(){
+				var theCanvas = document.getElementById('canvas');
+				var context = theCanvas.getContext('2d');
+				context.lineWidth = 5;
+				context.strokeStyle = 'blue';
+				
+				var fillImg = new Image();
+				fillImg.src = 'fill_20x20.gif';
+				var fillPattern = context.createPattern(fillImg,'repeat-x');
+				context.fillStyle = fillPattern;
+				
+				context.beginPath();
+				context.fillRect(0,0,200,200);
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<canvas id="canvas" width="500" height="500" style="border:solid #ccc 2px">
+				don't
+			</canvas>
+		</div>
+	</body>
+</html>

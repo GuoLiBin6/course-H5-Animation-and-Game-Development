@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>canvas 文本</title>
+		<script src="myCanvasLib.js"></script>
+		<script>
+			window.onload=function(){
+				var theCanvas = document.getElementById('canvas');
+				var context = theCanvas.getContext('2d');
+				
+				context.font = 'bold 40px Arial';
+				context.fillText('text',100,100);
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<canvas id="canvas" width="500" height="500" style="border:solid #ccc 2px">
+				don't
+			</canvas>
+		</div>
+	</body>
+</html>

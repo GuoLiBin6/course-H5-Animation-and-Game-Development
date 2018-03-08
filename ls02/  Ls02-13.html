@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>坐标变换</title>
+		<script>
+			window.onload=function(){
+				var theCanvas = document.getElementById('canvas');
+				var context = theCanvas.getContext('2d');
+				context.lineWidth = 5;
+				context.strokeStyle = 'blue';
+				
+				context.save();
+				//平移
+				context.translate(80,80);
+				//旋转
+				context.rotate(Math.PI*0.2)
+				//缩放
+				context.scale(0.5,1)
+				context.fillRect(0,0,70,70);
+				
+				context.restore();
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<canvas id="canvas" width="500" height="500" style="border:solid #ccc 2px">
+				don't
+			</canvas>
+		</div>
+	</body>
+</html>

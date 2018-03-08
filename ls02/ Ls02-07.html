@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>绘制贝塞尔曲线</title>
+		<script>
+			window.onload=function(){
+				var theCanvas = document.getElementById('canvas');
+				var context = theCanvas.getContext('2d');
+				context.lineWidth = 5;
+				context.strokeStyle = 'blue';
+				
+				context.beginPath();
+				context.bezierCurveTo(0,110,350,0,150,310);
+				context.stroke();
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<canvas id="canvas" width="500" height="500" style="border:solid #ccc 2px">
+				don't
+			</canvas>
+		</div>
+	</body>
+</html>
