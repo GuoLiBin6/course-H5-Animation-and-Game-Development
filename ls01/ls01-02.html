@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas绘制三角形</title>
+    <script>
+        window.onload = function(){
+            app();
+        }
+        function app(){
+            var context = document.getElementById('canvas').getContext('2d');
+
+            console.log(typeof context);//object
+            console.log(context.constructor);//f CanvasRenderingContext2D
+            console.log(context.__proto__);
+            //设置样式
+            context.fillStyle = "green";
+            context.lineWidth=5;
+            context.strokeStyle='red';
+            //绘制
+            context.beginPath();
+            context.moveTo(100,100);
+            context.lineTo(300,100);
+            context.lineTo(300,300);
+            context.closePath();
+            context.fill();
+            context.stroke();
+            
+
+            
+            
+
+        }
+    </script>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500" style="border:5px solid black">
+
+    </canvas>
+</body>
+</html>
