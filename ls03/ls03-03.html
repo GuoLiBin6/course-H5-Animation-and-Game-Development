@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>canvas图像水印</title>
+		<script>
+			
+			
+			var slider = document.getElementById('range');
+			window.onload=function(){
+				var context = document.getElementById('canvas').getContext('2d');
+				var theCanvas2 = document.getElementById('canvas2');
+				var context2 = document.getElementById('canvas2').getContext('2d');
+				var img = new Image();
+				img.src = "banner.png";
+
+				var scale = 1;
+
+				
+
+				img.onload = function(){
+					// context.drawImage(img,0,0,100,100);
+
+					context.drawImage(img,0,0,scale*500,scale*500);
+
+
+					context2.font = 'bold 50px red';
+					context2.lineWidth = '2';
+					context2.fillStyle = 'rgba(255,0,0,0.3)';
+					context2.fillText('水印文字',20,50);
+					context.drawImage(theCanvas2,0,0,500,500,0,0,500,500);
+
+				}
+				
+				
+				
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<canvas id="canvas" width="500" height="500" style="border:solid #ccc 2px;margin:0 auto;">
+				don't
+			</canvas>
+			<canvas id="canvas2" width="500" height="100" style="border:solid #ccc 2px;margin: 0 auto;">
+				don't
+			</canvas>
+			<br>
+			<input type="range" id="range">
+		</div>
+	</body>
+</html>
